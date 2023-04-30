@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh "docker-compose up -d"
-                sh "docker-compose exec web pytest"
+                sh "docker-compose exec -ti web pytest"
             }
         }
         stage('Push') {
